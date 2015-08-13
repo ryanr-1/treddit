@@ -2,8 +2,16 @@
 
 <p>
   <strong>Comment:</strong>
-  <%= @comment.comment %>
+  <%= @comment.author %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
+
+<div>
+	<% @post.comments.each do |comment| %>
+		<p><%= comment.author %> said...</p>
+		<% end %>
+</div>
